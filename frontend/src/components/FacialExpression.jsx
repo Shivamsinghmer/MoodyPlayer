@@ -3,6 +3,8 @@ import * as faceapi from "face-api.js";
 import "./facialExpression.css";
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
 export default function FacialExpression({ setSongs }) {
   const videoRef = useRef();
   const [loading, setLoading] = useState(false);
@@ -56,9 +58,9 @@ export default function FacialExpression({ setSongs }) {
 
       setDetectedMood(_expression);
 
-      // get http://localhost:3000/songs?mood=happy
+      // get <API_BASE_URL>/songs?mood=happy
       const response = await axios.get(
-        `http://localhost:3000/songs?mood=${_expression}`
+        `${API_BASE_URL}/songs?mood=${_expression}`
       );
       setSongs(response.data.songs);
     } catch (err) {
@@ -70,7 +72,6 @@ export default function FacialExpression({ setSongs }) {
 
   useEffect(() => {
     loadModels().then(startVideo);
-    // eslint-disable-next-line
   }, []);
 
   // Mood emoji mapping
@@ -93,7 +94,7 @@ export default function FacialExpression({ setSongs }) {
           <span>Moodify</span>
         </div>
         <a
-          href="https://github.com/Shivamsinghmer/MoodifyPlayer"
+          href="https://github.com/Shivamsinghmer/MoodyPlayer"
           target="_blank"
           rel="noopener noreferrer"
           className="moodify-navbar-btn"
