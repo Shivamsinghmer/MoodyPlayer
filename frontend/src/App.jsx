@@ -5,9 +5,7 @@ import MoodSongs from './components/MoodSongs'
 
 function App() {
 
-  const [ Songs, setSongs ] = useState([
-       
-    ])
+  const [ Songs, setSongs ] = useState([])
 
   return (
     <>
