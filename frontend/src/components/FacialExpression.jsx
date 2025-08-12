@@ -203,7 +203,7 @@ export default function FacialExpression({ setSongs }) {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding: 1;
+          padding: 1rem 0.75rem;
         }
         .moodify-navbar-title {
           display: flex;

@@ -1,13 +1,1 @@
-
-
-.moodify-root{
-    height: 65vh;
-    width: 90vw;
-}
-
-.user-video-feed {
-    width: 40rem;
-    aspect-ratio: 16/9;
-    border-radius: 1rem;
-    object-fit: cover;
-}
+/* Intentionally left minimal to avoid conflicting with component-scoped styles */
